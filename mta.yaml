@@ -1,0 +1,30 @@
+ID: psanuxsatraining
+_schema-version: '2.1'
+version: 0.0.1
+modules:
+  - name: db2
+    type: hdb
+    path: db2
+    requires:
+      - name: hdi_db2
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_db
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name}'
+      - name: hdi_db2
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: anubhav-user-container
+          service: '~{hdi-container-name_2}'
+resources:
+  - name: hdi_db
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: '${service-name}'
+  - name: hdi_db2
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name_2: '${service-name}'
