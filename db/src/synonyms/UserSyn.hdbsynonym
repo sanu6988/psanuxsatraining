@@ -1,0 +1,16 @@
+{
+  "Users": {
+    "target": {
+      "object": "App.Users",
+      "schema": "DB2_1",
+      "database": "HDB"
+    }
+  },
+  "CountryCodes": {
+    "target": {
+      "object": "App.Country",
+      "schema": "DB2_1",
+      "database": "HDB"
+    }
+  }
+}
