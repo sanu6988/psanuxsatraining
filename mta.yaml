@@ -19,6 +19,16 @@ modules:
         properties:
           key: anubhav-user-container
           service: '~{hdi-container-name_2}'
+  - name: srv
+    type: nodejs
+    path: srv
+    provides:
+      - name: srv_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_db
+      - name: db
 resources:
   - name: hdi_db
     type: com.sap.xs.hdi-container
