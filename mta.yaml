@@ -21,7 +21,7 @@ modules:
           service: '~{hdi-container-name_2}'
   - name: srv
     type: nodejs
-    path: srv
+    path: xsjs
     provides:
       - name: srv_api
         properties:

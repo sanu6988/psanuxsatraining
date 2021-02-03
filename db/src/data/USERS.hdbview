@@ -1,0 +1,4 @@
+view "USERS" as select
+"ID", "FIRSTNAME", "LASTNAME",
+"GENDER", "EMAIL", "PHONE", "COUNTRY.CODE"
+from "Users";
